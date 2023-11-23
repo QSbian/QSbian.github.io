@@ -13,16 +13,12 @@
             <h1>
                 哦，我亲爱的先生，别看了,也许你是想看看下面这个按钮
             </h1>
-            <style>
-                button {
-            height: 35px;
-            position:absolute;
-            top: 45%;
-            z-index: 1;
-            right: 34%;
-            border-radius: 8px;
-                }
-            </style>
+            <button styly="height: 35px;"
+            style="position:absolute;"
+            style="top: 45%;"
+            style="right: 34%;"
+            style="border-radius: 8px;">
+            </button>
         </div>
     </body>
 </html>
