@@ -10,6 +10,12 @@
             z-index: 0;
             animation: backgrd 20s 0s linear infinite;
         }
+            @keyframes backgrd {
+            10%{
+                background-image: url(https://img1.baidu.com/it/u=2929710579,3996007340&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800);
+                width: 100%;
+                height: 100%;
+                background-size: 100% 100%;
         </style>
     </head>
     <body>
