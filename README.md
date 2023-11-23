@@ -1,12 +1,14 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            .backgd{
+        .backgd{
             width: 100%;
             height: 100%;
             position: fixed;
             z-index: 0;
-            background-image:url(https://c-ssl.duitang.com/uploads/blog/202209/27/20220927073353_61380.jpeg);
+            animation: backgrd 20s 0s linear infinite;
         }
         </style>
     </head>
@@ -20,7 +22,7 @@
             <h1>
                 哦，我亲爱的先生，别看了,也许你是想看看下面这个按钮
             </h1>
-        </div>    
+        </div>
     </body>
 </html>
 
