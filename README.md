@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>QSbiansama</title>
     </head>
     <body>
         <p>这是一个段落的表示</p>
