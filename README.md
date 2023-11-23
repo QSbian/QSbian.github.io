@@ -2,21 +2,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-        .backgd{
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            z-index: 0;
-            animation: backgrd 20s 0s linear infinite;
-        }
-            @keyframes backgrd {
-            10%{
-                background-image: url(https://img1.baidu.com/it/u=2929710579,3996007340&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800);
-                width: 100%;
-                height: 100%;
-                background-size: 100% 100%;
-        </style>
     </head>
     <body>
         <p>欢迎来到我的网站？还是说网址？</p>
@@ -28,6 +13,16 @@
             <h1>
                 哦，我亲爱的先生，别看了,也许你是想看看下面这个按钮
             </h1>
+            <style>
+                button {
+            height: 35px;
+            position:absolute;
+            top: 45%;
+            z-index: 1;
+            right: 34%;
+            border-radius: 8px;
+                }
+            </style>
         </div>
     </body>
 </html>
