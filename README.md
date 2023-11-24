@@ -6,7 +6,7 @@
             div {
                 width: 100%;
                 height: 100%;
-                background-image: url(https://c-ssl.duitang.com/uploads/blog/202209/27/20220927073353_61380.jpeg);
+                background-image: href="https://c-ssl.duitang.com/uploads/blog/202209/27/20220927073353_61380.jpeg";
             }
         </style>
     </head>
