@@ -111,6 +111,7 @@
     <div class="wenzi">私斋蒸鹅心</div>
     <div class="backgd"></div>
     <div>
+        <p>这只是一个输入框</p>
         <input type="text">
         <button><a href="https://xinzhuobu.com/wp-content/uploads/2022/09/20220928002th.jpg">测试</a></button>
     </div>
