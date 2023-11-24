@@ -1,13 +1,15 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QSbian</title>
     <style>
-      .wenzi{
-        right: 10%;
-      }
+        .sd{
+            top: 20%;
+        }
+        .wenzi{
+            right: 10%;
+        }
         .backgd{
             right: 35%;
             bottom: 60%;
