@@ -2,6 +2,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div {
+                width: 100%;
+                height: 100%;
+                background-image: url(https://c-ssl.duitang.com/uploads/blog/202209/27/20220927073353_61380.jpeg);
+            }
+        </style>
     </head>
     <body>
         <p>欢迎来到我的网站？还是说网址？</p>
