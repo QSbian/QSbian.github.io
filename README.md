@@ -6,6 +6,7 @@
     <style>
         .sd{
             top: 20%;
+            bottom:90%;
         }
         .wenzi{
             right: 10%;
@@ -22,6 +23,7 @@
             justify-content: center;
         }
         input{
+            left: 40%;
             width: 300px;
             height: 30px;
             position: absolute;
@@ -97,7 +99,7 @@
                 background-size: 100% 100%;
             }
             100%{
-                background-image: url(https://th.bing.com/th/id/R.16970e90d50fb9d9525b24b4f7a2a5f0?rik=jGI4hpX5qWOLFA&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fed6d92cb0109e669faf2424326c31ec2ee4d7bf2.jpg&ehk=6YD5CKaVAHM4%2bN0df%2fjUxK1S1iOJJCtfSxKMzX%2fSKuU%3d&risl=&pid=ImgRaw&r=0);
+                background-image: url(https://th.bing.com/th/id/R.18d130eb4475a063b20680c8e813e1e6?rik=pDE5Qodeui3rRw&riu=http%3a%2f%2fi1.073img.com%2f220729%2f17598537_104728_3.jpg&ehk=oxA1jH7whuBjSiX4KgEii9lSaiN4zHqbzS6fpsB%2bUEs%3d&risl=&pid=ImgRaw&r=0);
                 width: 30%;
                 height: 30%;
                 background-size: 100% 100%;
