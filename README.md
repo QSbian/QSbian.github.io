@@ -1,119 +1,160 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QSbian</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no,minimal-ui"
+    />
+    <title>DIY水印相机</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        .sd{
-            top: 20%;
-            bottom:90%;
-        }
-        .wenzi{
-            right: 10%;
-        }
-        .backgd{
-            right: 35%;
-            bottom: 60%;
-            position: fixed;
-            z-index: 0;
-            animation: backgrd 25s 0s linear infinite;
-        }
-        div{
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            height: 115vh;
+            margin: 0;
+            background-color: #f0f0f0;
         }
-        input{
-            left: 40%;
-            width: 300px;
-            height: 30px;
-            position: absolute;
-            top: 45%;
-            z-index: 1;
-            margin: auto;
-            border-radius: 8px;
-        }
-        button{
-            height: 35px;
-            position:absolute;
-            top: 45%;
-            z-index: 1;
-            right: 38%;
-            border-radius: 8px;
-        }
-        button:hover{
+        #videoContainer {
+            position: relative;
+            width: 380px;
+            height: 500px; /* Fixed height for video and image */
+            overflow: hidden; /* Hide overflow content */
             background-color: black;
         }
-        @keyframes backgrd {
-            10%{
-                background-image: url(https://th.bing.com/th/id/R.4a5d47fa96393d814ff8d87b219497e9?rik=Qt3ZhYFv%2f1gH%2fQ&riu=http%3a%2f%2fi1.hdslb.com%2fbfs%2farchive%2f66befb9779e95d4f1d4effe158056f5bcace7f03.jpg&ehk=EbIpc00bAyqfHtQf3%2fA3BZp04R6TiVd9UhENT2h0aYE%3d&risl=&pid=ImgRaw&r=0);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
-            20%{
-                background-image: url(https://th.bing.com/th/id/OIP.NMT1_UAN25RszFd0DIlatgHaKe?rs=1&pid=ImgDetMain);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
-            30%{
-                background-image: url(https://vrcmods.com/imgs/E2vxZyW8Gggv.jpg);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
-            40%{
-                background-image: url(https://th.bing.com/th/id/OIP.HkaRQH_6rWEBqsz7I0_lWwHaJ4?rs=1&pid=ImgDetMain);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
-            50%{
-                background-image: url(https://th.bing.com/th/id/R.525f2291c4ba51d5ebf5e68e8aed48d6?rik=Dld6a0yRlAw%2bbA&riu=http%3a%2f%2fi1.hdslb.com%2fbfs%2farchive%2fbedfeb8c476bea70d99242eea8dd121989b779f0.jpg&ehk=PWne0vC%2btyQpKlR1w1CCO8BW98E%2b8RNInOjrpkAo7Yw%3d&risl=&pid=ImgRaw&r=0);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
-            60%{
-                background-image: url(https://th.bing.com/th/id/OIP.yVUdURBfVLGvXY4RwBk-gAHaLH?rs=1&pid=ImgDetMain);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
-            70%{
-                background-image: url(https://th.bing.com/th/id/OIP.jPHiKTSvSuAk2y94YcqWBgHaEo?rs=1&pid=ImgDetMain);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
-            80%{
-                background-image: url(https://th.bing.com/th/id/OIP.n6yYU0JHYYzW2aLdR34WjQHaGN?rs=1&pid=ImgDetMain);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
-            90%{
-                background-image: url(https://bkimg.cdn.bcebos.com/smart/0d338744ebf81a4cde94779fd82a6059242da6c6-bkimg-process,v_1,rw_1,rh_1,pad_1,color_ffffff?x-bce-process=image/format,f_auto);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
-            100%{
-                background-image: url(https://th.bing.com/th/id/R.18d130eb4475a063b20680c8e813e1e6?rik=pDE5Qodeui3rRw&riu=http%3a%2f%2fi1.073img.com%2f220729%2f17598537_104728_3.jpg&ehk=oxA1jH7whuBjSiX4KgEii9lSaiN4zHqbzS6fpsB%2bUEs%3d&risl=&pid=ImgRaw&r=0);
-                width: 30%;
-                height: 30%;
-                background-size: 100% 100%;
-            }
+        #videoElement, #imageElement {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%; /* Always take full width */
+            height: auto; /* Adjust height automatically */
+            transform: translate(-50%, -50%);
+        }
+        #watermark {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #time {
+            background: linear-gradient(to bottom, #5798ff, black);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding-left: 12.8px;
+            transform: scaleX(0.8);
+        }
+        #times {
+            padding-left: 3px;
+            transform: scaleX(0.8);
+            margin-top: -80px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="wenzi">私斋蒸鹅心</div>
-    <div class="backgd"></div>
-    <div>
-        <input type="text">
-        <button><a href="https://xinzhuobu.com/wp-content/uploads/2022/09/20220928002th.jpg">测试</a></button>
+    <div id="videoContainer">
+        <video id="videoElement" autoplay playsinline></video>
+        <img id="imageElement" style="display:none;">
+        <div id="watermark" style="margin-bottom: -16.3px;">
+            <img src="bj.png" style="position: initial;width: 380px;margin-bottom: -113.3px;margin-left: -15px;">
+            <div id="time"></div>
+            <div id="watermarkTextb" style="transform: scaleX(0.9);padding-top: 8px;margin-left: -10px;padding-bottom: 1px;letter-spacing: 0.1px;font-weight: bold;">广东省东莞市虎门镇</div>
+            <div id="watermarkTextc" style="padding-bottom: 19px;padding-left: 10px;letter-spacing: 0px;">获取中</div>
+            <div id="fw" style="transform: scaleX(0.8);letter-spacing: 0px;margin-left: 303px;font-size: 6.5px;margin-bottom: 0px;font-weight: bold;margin-top: -1.8px;">获取中</div>
+        </div>
     </div>
-    <div class="sd">我承认，私斋是这样的</div>
+    <div>
+        <button id="startCamera">使用相机</button>
+        <input type="file" id="uploadImage" accept="image/*">
+    </div>
+    <div>
+        <label for="watermarkInput">A水印:</label>
+        <input type="text" id="watermarkInputa" placeholder="A水印">
+        <label for="watermarkInput">B水印:</label>
+        <input type="text" id="watermarkInputb" placeholder="B水印">
+        <label for="watermarkInput">C水印:</label>
+        <input type="text" id="watermarkInputc" placeholder="C水印">
+        <button id="updateWatermark">更新水印</button>
+    </div>
+    <br>
+    <p>本项目仅供学习参考，请勿非法使用，否则后果自负！</p>
+    <script>
+        $(document).ready(function () {
+            const videoElement = document.getElementById('videoElement');
+            const imageElement = document.getElementById('imageElement');
+            const watermarka = document.getElementById('time');
+            const watermarkb = document.getElementById('watermarkTextb');
+            const watermarkc = document.getElementById('watermarkTextc');
+            $("#fw").text(generateRandomString(14));
+            var currentDate = new Date();
+            var hours = ("0" + currentDate.getHours()).slice(-2);
+            var minutes = ("0" + currentDate.getMinutes()).slice(-2);
+            var formattedTime = hours + ":" + minutes;
+            $("#time").text(formattedTime);
+            $("#watermarkInputa").val(formattedTime);
+            var days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var currentDate = new Date();
+            var year = currentDate.getFullYear();
+            var month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+            var day = ("0" + currentDate.getDate()).slice(-2);
+            var dayOfWeek = days[currentDate.getDay()];
+            var formattedDate = year + "." + month + "." + day + " " + dayOfWeek;
+            $("#watermarkTextc").text(formattedDate);
+            $("#watermarkInputb").val('广东省广州市白云区龙井西路4号');
+            $("#watermarkInputc").val(formattedDate);
+            $('#startCamera').click(function () {
+                $('#imageElement').hide();
+                $('#videoElement').show();
+                if (navigator.mediaDevices.getUserMedia) {
+                    navigator.mediaDevices.getUserMedia({ 
+                        video: { facingMode: { exact: "environment" } } 
+                    })
+                    .then(function (stream) {
+                        videoElement.srcObject = stream;
+                    })
+                    .catch(function (error) {
+                        console.log("Something went wrong!", error);
+                    });
+                }
+            });
+            $('#uploadImage').change(function (event) {
+                $('#videoElement').hide();
+                $('#imageElement').show();
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imageElement').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(file);
+            });
+            $('#updateWatermark').click(function () {
+                watermarka.textContent = $('#watermarkInputa').val();
+                watermarkb.textContent = $('#watermarkInputb').val();
+                watermarkc.textContent = $('#watermarkInputc').val();
+                $("#fw").text(generateRandomString(14));
+            });
+        });
+        function generateRandomString(length) {
+            const characters = 'ABCDEFGHIJKMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            const charactersLength = characters.length;
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+    </script>
 </body>
 </html>
