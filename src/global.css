@@ -1,0 +1,30 @@
+router-link,
+router-link-active, /* 激活状态的路由链接 */
+a[href^="#"], /* 匹配 Vue Router 生成的哈希链接 */
+a[href^="/"]  /* 匹配普通路由链接 */
+{
+  text-decoration: none; /* 去掉下划线 */
+  color: inherit; /* 继承父元素颜色，避免默认蓝色 */
+}
+router-link:hover,
+a:hover {
+  color: #4299e1; 
+}
+:root {
+  /* 顶部安全区域（状态栏、刘海） */
+  --safe-top: env(safe-area-inset-top, 20px);
+  --safe-top: constant(safe-area-inset-top, 20px); /* 兼容旧iOS */
+  
+  /* 底部安全区域（底部手势区） */
+  --safe-bottom: env(safe-area-inset-bottom, 20px);
+  --safe-bottom: constant(safe-area-inset-bottom, 20px); /* 兼容旧iOS */
+}
+
+/* 全局body样式，避免内容被系统UI遮挡 */
+body {
+  margin: 0;
+  padding-top: var(--safe-top); /* 顶部预留安全区域 */
+  padding-bottom: var(--safe-bottom); /* 底部预留安全区域 */
+  min-height: 100vh;
+  box-sizing: border-box; /* 确保padding不影响整体高度 */
+}

@@ -1,0 +1,33 @@
+export const PATH = {
+  INDEX:'/',
+  RECOMMENDCONTENT: '/recommend/content',
+  PLANCONTENT: '/plan/content',
+  SEARCH: '/SearchAll',
+  SEARCHTO: '/Search',
+  CONTENTMESSAGE: '/Search/:name',
+  MESSAGEIN: '/Mymessage',
+  MESSAGETO: '/Mymessage/:id',
+  DrawingMan: '/Drawing/bestDrawer',
+  MyLand: '/LandTogether',
+  PERSONALCENTER: '/Myinfo', 
+  LOGIN: '/Login',
+  RESETPASSWORD:'/Login/ResetCode',
+  NOTFOUND: '/404',
+} as const;
+
+export const ROUTE_NAME = {
+  INDEX:'PageIndex',
+  RECOMMENDCONTENT: 'RecommendContent',
+  PALNCONTENT: 'PlanContent',
+  SEARCH: 'Search',
+  SEARCHTO: 'SearchTo',
+  CONTENTMESSAGE: 'SearchContent',
+  DrawingMan: 'DrawingMan',
+  MyLand: 'LandTogether',
+  MESSAGEIN: 'MyMessage',
+  MESSAGETO: 'MyMessageTo',
+  PERSONALCENTER: 'PersonalCenter',
+  LOGIN: 'LoginIn',
+  RESETPASSWORD:'ResetCode',
+  NOTFOUND: 'NotFound',
+} as const;
