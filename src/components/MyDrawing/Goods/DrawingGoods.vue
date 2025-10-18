@@ -357,10 +357,9 @@ onBeforeUnmount(() => {
         padding: 4px;
         box-sizing: border-box;
         position: relative;
-        min-height: calc(100vh - 200px);
+        min-height: calc(100vh - 140px);
         overflow-y: auto;
         scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
         grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 40vw, 240px), 2fr));
         gap: clamp(8px, 1.5vw, 20px);
         max-width: 1400px;

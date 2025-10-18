@@ -12,7 +12,7 @@ app.use(VueLazyload, {
   attempt: 1 // 加载失败重试次数
 })
 app.use(createPinia())
-// app.use(router);
+app.use(router);
 const updateAppStatus = (status: 'active' | 'closed') => {
   localStorage.setItem('app_last_active_status', status);
 };

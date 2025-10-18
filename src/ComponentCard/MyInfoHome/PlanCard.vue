@@ -47,6 +47,11 @@ const props = defineProps<{
         .title-div {
             font-size: 20px;
             color: #000000;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .discribe-div {
@@ -64,13 +69,14 @@ const props = defineProps<{
 
         .label-div {
             font-size: 10px;
-            display: flex;
+            display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 15%;
+            padding: 2px 6px;
+            white-space: nowrap;
             color: #25a4e9;
             background-color: aliceblue;
-            border-radius: 15%;
+            border-radius: 8px;
         }
 
         .foot-div {

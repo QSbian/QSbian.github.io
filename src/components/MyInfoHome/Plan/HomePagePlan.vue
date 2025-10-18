@@ -214,7 +214,7 @@ const handleScroll = () => {
     if (!hasMoreData.value && isAtBottom.value) {
         isAtBottom.value = false;
     }
-    localStorage.setItem('SCROLL_RECOMMEND_POS_KEY', scrollTop.toString());
+    localStorage.setItem('SCROLL_HomePlan_POS_KEY', scrollTop.toString());
 };
 
 
@@ -308,7 +308,7 @@ const refreshData = async () => {
 
         // 强制重置所有状态
         savedScrollTop.value = 0;
-        localStorage.setItem('SCROLL_RECOMMEND_POS_KEY', '0');
+        localStorage.setItem('SCROLL_HomePlan_POS_KEY', '0');
         isTouchingTop.value = false;
         pullDistanceTop.value = 0;
         console.log("数据刷新完成！");
@@ -348,7 +348,7 @@ const loadMoreData = async () => {
         if (cardsGridRef.value) {
             cardsGridRef.value.scrollTop = prevScrollTop;
             savedScrollTop.value = prevScrollTop;
-            localStorage.setItem('SCROLL_RECOMMEND_POS_KEY', prevScrollTop.toString());
+            localStorage.setItem('SCROLL_HomePlan_POS_KEY', prevScrollTop.toString());
         }
     } catch (error) {
         page.value--;
@@ -373,7 +373,7 @@ onActivated(() => {
     cardsGridRef.value.addEventListener('scroll', handleScroll);
     cardsGridRef.value.addEventListener('scroll', handleScrollEnd);
 
-    const savedPos = Number(localStorage.getItem('SCROLL_RECOMMEND_POS_KEY')) || 0;
+    const savedPos = Number(localStorage.getItem('SCROLL_HomePlan_POS_KEY')) || 0;
 
     if (!isFirstMount.value) {
         nextTick(() => {
@@ -405,7 +405,7 @@ onMounted(() => {
         refreshData();
     }
 
-    const savedPos = Number(localStorage.getItem('SCROLL_RECOMMEND_POS_KEY')) || 0;
+    const savedPos = Number(localStorage.getItem('SCROLL_HomePlan_POS_KEY')) || 0;
     savedScrollTop.value = savedPos;
     isFirstMount.value = false;
 
@@ -472,7 +472,7 @@ onBeforeUnmount(() => {
     width: 100%;
     box-sizing: border-box;
     position: relative;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 140px);
     background-color: rgb(246, 244, 244);
 
     .cards-grid {

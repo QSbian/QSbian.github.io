@@ -96,7 +96,7 @@ const mockGoodsData = {
     <div class="personal-body">
         <div class="person-message">
             <div class="reset-sth">
-                <button class="button-cmt"><img src="/public/设置.png" alt="设置" /></button>
+                <button class="button-cmt"><img class="setting-img" src="/设置.png" alt="设置" /></button>
             </div>
             <div class="show-detail scroll-container">
                 <div class="content-rows">
